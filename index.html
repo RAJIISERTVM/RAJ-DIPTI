@@ -73,19 +73,22 @@ h1{
 .gallery{
     margin-top:40px;
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
-    gap:15px;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap:20px;
     padding:20px;
 }
 
 .gallery img{
     width:100%;
+    aspect-ratio: 3 / 4;   /* 🔥 FIX */
+    object-fit: cover;     /* 🔥 FIX */
     border-radius:15px;
     transition:0.4s;
 }
 
 .gallery img:hover{
-    transform:scale(1.1);
+    transform:scale(1.05);
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.6);
 }
 
 /* LETTER */
