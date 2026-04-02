@@ -3,16 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Valentine's Day Dipti ❤️</title>
+<title>Happy Birthday Dipti 💖</title>
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* ========================= */
-/* GLOBAL STYLES */
-/* ========================= */
 
 *{
     margin:0;
@@ -22,77 +17,59 @@
 
 body{
     font-family:'Poppins', sans-serif;
-    height:100vh;
-    overflow-x:hidden;
     color:white;
     text-align:center;
+    overflow-x:hidden;
 
-    background: linear-gradient(-45deg, #ff9a9e, #fecfef, #fcb69f, #c471ed);
+    /* FULL PINK THEME */
+    background: linear-gradient(-45deg, #ff758c, #ff7eb3, #ff4d6d, #ff99ac);
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    animation: gradientBG 12s ease infinite;
 }
 
-/* animated gradient */
 @keyframes gradientBG{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
 }
 
-/* floating hearts container */
+/* HEARTS */
 #hearts{
     position:fixed;
     width:100%;
     height:100%;
-    top:0;
-    left:0;
-    overflow:hidden;
     z-index:-1;
 }
 
-/* heart style */
 .heart{
     position:absolute;
     bottom:-50px;
     color:#ff4d6d;
-    font-size:20px;
     animation: floatUp linear infinite;
 }
 
 @keyframes floatUp{
-    from{
-        transform: translateY(0) scale(1);
-        opacity:1;
-    }
     to{
         transform: translateY(-110vh) scale(1.5);
         opacity:0;
     }
 }
 
-/* ========================= */
 /* HEADER */
-/* ========================= */
-
 header{
     padding-top:50px;
-    animation: fadeIn 2s ease;
 }
 
 h1{
     font-family:'Pacifico', cursive;
-    font-size:2.5rem;
+    font-size:2.7rem;
 }
 
 .subtitle{
     margin-top:10px;
-    font-size:1.2rem;
 }
 
-/* ========================= */
 /* GALLERY */
-/* ========================= */
-
 .gallery{
     margin-top:40px;
     display:grid;
@@ -104,59 +81,36 @@ h1{
 .gallery img{
     width:100%;
     border-radius:15px;
-    cursor:pointer;
     transition:0.4s;
-    box-shadow:0 4px 15px rgba(0,0,0,0.2);
 }
 
 .gallery img:hover{
     transform:scale(1.1);
 }
 
-/* ========================= */
 /* LETTER */
-/* ========================= */
-
 .letter{
     margin:40px auto;
     max-width:600px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.2);
     padding:20px;
     border-radius:15px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
 }
 
-#typedText{
-    font-size:1.1rem;
-    min-height:120px;
-}
-
-/* ========================= */
 /* BUTTON */
-/* ========================= */
-
 button{
     margin-top:20px;
     padding:15px 25px;
     border:none;
     border-radius:30px;
-    font-size:1rem;
-    cursor:pointer;
     background:white;
     color:#ff4d6d;
     font-weight:bold;
-    transition:0.3s;
+    cursor:pointer;
 }
 
-button:hover{
-    transform:scale(1.1);
-    box-shadow:0 0 15px rgba(255,255,255,0.8);
-}
-
-/* ========================= */
 /* POPUP */
-/* ========================= */
-
 .popup{
     position:fixed;
     top:50%;
@@ -166,8 +120,6 @@ button:hover{
     color:#ff4d6d;
     padding:30px;
     border-radius:20px;
-    font-size:1.3rem;
-    box-shadow:0 0 30px rgba(0,0,0,0.3);
     transition:0.4s;
 }
 
@@ -175,17 +127,18 @@ button:hover{
     transform:translate(-50%,-50%) scale(1);
 }
 
-/* fade animation */
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(20px);}
-    to{opacity:1; transform:translateY(0);}
+/* SPECIAL HEART BUTTON */
+.big-heart{
+    font-size:60px;
+    margin-top:30px;
+    cursor:pointer;
+    animation:pulse 1.5s infinite;
 }
 
-/* mobile */
-@media(max-width:600px){
-    h1{
-        font-size:1.8rem;
-    }
+@keyframes pulse{
+    0%{transform:scale(1); color:#ff4d6d;}
+    50%{transform:scale(1.2); color:#ff99ac;}
+    100%{transform:scale(1); color:#ff4d6d;}
 }
 
 </style>
@@ -193,21 +146,18 @@ button:hover{
 
 <body>
 
-<!-- Floating Hearts -->
 <div id="hearts"></div>
 
-<!-- Music -->
-<audio autoplay loop>
+<!-- MUSIC -->
+<audio autoplay loop controls>
     <source src="music.mp3" type="audio/mp3">
 </audio>
 
-<!-- Header -->
 <header>
-    <h1>Happy Valentine's Day Dipti ❤️</h1>
-    <div class="subtitle">You are the most beautiful part of my life</div>
+    <h1>Happy Birthday Dipti 💖</h1>
+    <div class="subtitle">You make my world brighter ✨</div>
 </header>
 
-<!-- Gallery -->
 <div class="gallery">
     <img src="photo1.jpg">
     <img src="photo2.jpg">
@@ -215,29 +165,27 @@ button:hover{
     <img src="photo4.jpg">
 </div>
 
-<!-- Love Letter -->
 <div class="letter">
     <div id="typedText"></div>
 </div>
 
-<!-- Button -->
-<button onclick="showPopup()">Click here Dipti ❤️</button>
+<!-- BIG HEART -->
+<div class="big-heart" onclick="heartBurst()">💖</div>
 
-<!-- Popup -->
+<button onclick="showPopup()">Click for a surprise 💖</button>
+
 <div class="popup" id="popup">
-    I love you Dipti ❤️ Forever and always.
+    I’m lucky to have you, Dipti 💖 <br><br>
+    My love is only for you — always.
 </div>
 
 <script>
 
-/* ========================= */
 /* FLOATING HEARTS */
-/* ========================= */
-
 function createHeart(){
     const heart = document.createElement("div");
     heart.className="heart";
-    heart.innerHTML="❤️";
+    heart.innerHTML="💖";
 
     heart.style.left=Math.random()*100+"%";
     heart.style.fontSize=(Math.random()*20+10)+"px";
@@ -245,42 +193,36 @@ function createHeart(){
 
     document.getElementById("hearts").appendChild(heart);
 
-    setTimeout(()=>{
-        heart.remove();
-    },10000);
+    setTimeout(()=>heart.remove(),10000);
 }
-
 setInterval(createHeart,300);
 
-/* ========================= */
-/* TYPING ANIMATION */
-/* ========================= */
+/* TYPING TEXT */
+const text = "Dipti, happy birthday 💖 You are my happiness, my peace, and my everything. My heart belongs only to you. You make every moment beautiful ✨";
 
-const text = "Dipti, From the moment you came into my life, everything became more beautiful. You are my happiness, my peace, and my heart. Happy Valentine's Day, my love ❤️";
-
-let index=0;
-
+let i=0;
 function type(){
-    if(index < text.length){
-        document.getElementById("typedText").innerHTML += text.charAt(index);
-        index++;
+    if(i<text.length){
+        document.getElementById("typedText").innerHTML += text.charAt(i);
+        i++;
         setTimeout(type,40);
     }
 }
-
 type();
 
-/* ========================= */
 /* POPUP */
-/* ========================= */
-
 function showPopup(){
     document.getElementById("popup").classList.add("show");
 }
-
-/* close popup on click */
 document.getElementById("popup").onclick=function(){
     this.classList.remove("show");
+}
+
+/* HEART BURST EFFECT */
+function heartBurst(){
+    for(let i=0;i<20;i++){
+        createHeart();
+    }
 }
 
 </script>
